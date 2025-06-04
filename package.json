@@ -1,0 +1,68 @@
+{
+  "name": "quick-temp-file",
+  "displayName": "%quickTempFile.displayName%",
+  "description": "%quickTempFile.description%",
+  "version": "0.4.2",
+  "publisher": "slyf",
+  "icon": "./images/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "l10n": "./l10n",
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tslyf/quick-temp-file.git"
+  },
+  "homepage": "https://github.com/tslyf/quick-temp-file",
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "quickTempFile.create",
+        "title": "%quickTempFile.command.create.title%"
+      }
+    ],
+    "configuration": {
+      "title": "%quickTempFile.config.title%",
+      "properties": {
+        "quickTempFile.deleteOnExit": {
+          "type": "boolean",
+          "default": false,
+          "description": "%quickTempFile.config.deleteOnExit.description%"
+        },
+        "quickTempFile.defaultPath": {
+          "type": "string",
+          "default": "",
+          "description": "%quickTempFile.config.defaultPath.description%"
+        },
+        "quickTempFile.defaultExtension": {
+          "type": "string",
+          "default": ".txt",
+          "description": "%quickTempFile.config.defaultExtension.description%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "18.x",
+    "@types/uuid": "^9.0.8",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.50.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
+  }
+}
