@@ -4,7 +4,7 @@
 
 [![VS Code Version](https://img.shields.io/badge/vscode-^1.80.0-blue.svg)](https://code.visualstudio.com)
 
-**Quick Temp File** is a Visual Studio Code extension that allows you to quickly create or open temporary files with customizable settings and a persistent history. Forget manually creating files for notes, code snippets, or temporary data!
+**Quick Temp File** is a Visual Studio Code extension that allows you to quickly create or open temporary files with a persistent history. Forget manually creating files for notes, code snippets, or temporary data!
 
 ## Usage
 
@@ -16,6 +16,7 @@
             * If the name has no extension, the default extension (e.g., `.txt`) will be appended.
             * The file will be created in the configured default path if it doesn't exist, and then opened.
             * If a file with that name already exists in the default path, it will be opened directly.
+        * If you type only the extension (for example, `.md`, `.txt`) and press `Enter`, a new file with a random name and the specified extension will be created.
     * **"New file with random name" item:** Select this item from the list to instantly create a new file with a unique random name (using UUID) and the default extension in the default path. The file will then be opened.
     * **Recent Files List:** Below the input and the random option, you'll see a list of recently created/opened temporary files.
         * Selecting an existing file from this list will open it.
