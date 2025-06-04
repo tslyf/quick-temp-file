@@ -1,3 +1,5 @@
+[Русский](README.ru.md) | English
+
 # Quick Temp File
 
 [![VS Code Version](https://img.shields.io/badge/vscode-^1.80.0-blue.svg)](https://code.visualstudio.com)
