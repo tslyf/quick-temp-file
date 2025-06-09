@@ -4,7 +4,9 @@
 
 [![VS Code Version](https://img.shields.io/badge/vscode-^1.80.0-blue.svg)](https://code.visualstudio.com) [![Visual Studio Marketplace Version](https://img.shields.io/vscode-marketplace/v/slyf.quick-temp-file.svg)](https://marketplace.visualstudio.com/items?itemName=slyf.quick-temp-file) [![Visual Studio Marketplace Installs](https://img.shields.io/vscode-marketplace/i/slyf.quick-temp-file.svg)](https://marketplace.visualstudio.com/items?itemName=slyf.quick-temp-file)
 
-**Quick Temp File** is a Visual Studio Code extension that allows you to quickly create or open temporary files with a persistent history. Forget manually creating files for notes, code snippets, or temporary data!
+Visual Studio Code extension that allows you to quickly create or open temporary files. Forget manually creating files for notes, code snippets, or temporary data!
+
+![Quick Temp Fule](images/demo.gif)
 
 ## Usage
 

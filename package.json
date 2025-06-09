@@ -2,7 +2,7 @@
   "name": "quick-temp-file",
   "displayName": "%quickTempFile.displayName%",
   "description": "%quickTempFile.description%",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "publisher": "slyf",
   "icon": "./images/icon.png",
   "engines": {

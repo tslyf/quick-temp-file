@@ -4,7 +4,9 @@
 
 [![VS Code Version](https://img.shields.io/badge/vscode-^1.80.0-blue.svg)](https://code.visualstudio.com) [![Visual Studio Marketplace Version](https://img.shields.io/vscode-marketplace/v/slyf.quick-temp-file.svg)](https://marketplace.visualstudio.com/items?itemName=slyf.quick-temp-file) [![Visual Studio Marketplace Installs](https://img.shields.io/vscode-marketplace/i/slyf.quick-temp-file.svg)](https://marketplace.visualstudio.com/items?itemName=slyf.quick-temp-file)
 
-**Quick Temp File** — это расширение, позволяющее быстро создавать или открывать временные файлы с сохраняемой историей. Забудьте о ручном создании файлов для заметок, фрагментов кода или временных данных!
+Расширение, позволяющее быстро создавать или открывать временные файлы. Забудьте о ручном создании файлов для заметок, фрагментов кода или временных данных!
+
+![Quick Temp Fule](images/demo.gif)
 
 ## Использование
 
