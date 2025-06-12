@@ -2,7 +2,7 @@
   "name": "quick-temp-file",
   "displayName": "%quickTempFile.displayName%",
   "description": "%quickTempFile.description%",
-  "version": "0.4.3",
+  "version": "1.1.0",
   "publisher": "slyf",
   "icon": "./images/icon.png",
   "engines": {
@@ -23,9 +23,25 @@
     "commands": [
       {
         "command": "quickTempFile.create",
-        "title": "%quickTempFile.command.create.title%"
+        "title": "%quickTempFile.command.create.title%",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "quickTempFile.createNoDialog",
+        "title": "%quickTempFile.command.createNoDialog.title%",
+        "icon": "$(zap)"
+      },
+      {
+        "command": "quickTempFile.api.create",
+        "title": "%quickTempFile.command.apiCreate.title%"
       }
     ],
+    "menus": {
+        "commandPalette": [{
+            "command": "quickTempFile.api.create",
+            "when": "false"
+        }]
+    },
     "configuration": {
       "title": "%quickTempFile.config.title%",
       "properties": {

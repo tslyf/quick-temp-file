@@ -1,9 +1,11 @@
 {
-  "quickTempFile.command.create.title": "Quick Temp File: Create New File or Open Recent",
+  "quickTempFile.command.create.title": "Quick Temp File: Create or Open File...",
+  "quickTempFile.command.createNoDialog.title": "Quick Temp File: Create Instant File",
   "quickTempFile.config.defaultExtension.description": "Default file extension (including the leading dot) to be appended if no extension is provided. Default is `.txt`.",
   "quickTempFile.config.defaultPath.description": "Default directory for temporary files. If empty, the system's temporary directory is used (e.g., `/tmp` or `%TEMP%`). Default is empty.",
   "quickTempFile.config.deleteOnExit.description": "Delete temporary files created by this extension when VS Code exits. Default is `false`.",
   "quickTempFile.config.title": "Quick Temp File",
   "quickTempFile.description": "Quickly create temporary files.",
-  "quickTempFile.displayName": "Quick Temp File"
+  "quickTempFile.displayName": "Quick Temp File",
+  "quickTempFile.command.apiCreate.title": "Quick Temp File: Create File"
 }

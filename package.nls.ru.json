@@ -1,9 +1,11 @@
 {
-    "quickTempFile.command.create.title": "Quick Temp File: Создать новый файл или открыть недавний",
+    "quickTempFile.command.create.title": "Quick Temp File: Создать или открыть файл...",
+    "quickTempFile.command.createNoDialog.title": "Quick Temp File: Создать мгновенный файл",
     "quickTempFile.config.defaultExtension.description": "Расширение файла по умолчанию (включая ведущую точку), которое будет добавлено, если расширение не указано. По умолчанию: `.txt`.",
     "quickTempFile.config.defaultPath.description": "Каталог по умолчанию для создания временных файлов. Если пусто, используется системный временный каталог (например, `/tmp` или `%TEMP%`). По умолчанию: пусто.",
     "quickTempFile.config.deleteOnExit.description": "Следует ли удалять временные файлы, созданные этим расширением, при выходе из VS Code. По умолчанию: `false`.",
     "quickTempFile.config.title": "Quick Temp File",
     "quickTempFile.description": "Быстрое создание временных файлов.",
-    "quickTempFile.displayName": "Quick Temp File"
+    "quickTempFile.displayName": "Quick Temp File",
+    "quickTempFile.command.apiCreate.title": "Quick Temp File: Создать файл"
 }

@@ -6,36 +6,66 @@
 
 Visual Studio Code extension that allows you to quickly create or open temporary files. Forget manually creating files for notes, code snippets, or temporary data!
 
-![Quick Temp Fule](images/demo.gif)
-
 ## Usage
 
-1.  Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
-2.  Type and select the command: `Quick Temp File: Create New File or Open Recent`.
-3.  A menu will appear with the following options:
-    * **Input Box (at the top):** You can type a new filename here.
-        * If you type a name (e.g., `my_notes` or `script.js`) and press `Enter`:
-            * If the name has no extension, the default extension (e.g., `.txt`) will be appended.
-            * The file will be created in the configured default path if it doesn't exist, and then opened.
-            * If a file with that name already exists in the default path, it will be opened directly.
-        * If you type only the extension (for example, `.md`, `.txt`) and press `Enter`, a new file with a random name and the specified extension will be created.
-    * **"New file with random name" item:** Select this item from the list to instantly create a new file with a unique random name (using UUID) and the default extension in the default path. The file will then be opened.
-    * **Recent Files List:** Below the input and the random option, you'll see a list of recently created/opened temporary files.
-        * Selecting an existing file from this list will open it.
-        * If a file from the list has been deleted from your disk, it will be marked. Selecting it will prompt the extension to recreate the file at its original path and then open it.
+### 1. Create or Open File... (Interactive Command)
 
-4.  The chosen or created file will be opened in the editor, and your history will be updated.
+* **Command:** `Quick Temp File: Create or Open File...`
+* **What it does:** Opens a dialog to create or select a file.
+
+*Demonstration:*
+![Quick Temp File](images/demo.gif)
+
+### 2. Create Instant File (No-Dialog Command)
+
+* **Command:** `Quick Temp File: Create Instant File`
+* **What it does:** **Instantly** creates and opens a new temporary file with a unique random name (UUID) and the default extension.
 
 ## Extension Settings
 
-* **`quickTempFile.deleteOnExit`**:
-    * Specifies whether temporary files created *during the current session by this extension* should be deleted when VS Code exits.
-    * **Default is `false`**.
+* **`quickTempFile.deleteOnExit`**: Deletes temporary files created during the current session when VS Code exits. (Default: `false`).
+* **`quickTempFile.defaultPath`**: The default directory for creating temporary files. (Default: system's temporary directory).
+* **`quickTempFile.defaultExtension`**: The default file extension. (Default: `.txt`).
 
-* **`quickTempFile.defaultPath`**:
-    * Specifies the default directory for creating temporary files.
-    * **Default is empty, which means the system's temporary directory will be used** (e.g., `/tmp` on Linux/macOS, `%TEMP%` on Windows).
+## For Developers (API)
 
-* **`quickTempFile.defaultExtension`**:
-    * Specifies the default file extension (including the leading dot) to be appended if no extension is provided in the filename (e.g., when typing a new name or for random files).
-    * **Default is `.txt`**.
+The extension exposes a internal command for programmatic use in other extensions, `tasks.json`, or advanced `keybindings.json` setups.
+
+* **Command ID:** `quickTempFile.api.create`
+* **Arguments:** `(args: object)`
+
+The `args` object can contain the following fields:
+
+| Field | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `noDialog` | `boolean` | `false` | If `true`, the file is created immediately without a dialog. |
+| `filename` | `string` | `undefined` | A specific name for the new file. Implies `noDialog: true`. |
+| `content` | `string` | `undefined` | Initial content for the new file. |
+| `directory`| `string \| null` | `undefined`| Overrides the default directory. `null` uses the system temp folder. |
+| `extension`| `string` | `undefined` | Overrides the default file extension. |
+| `quiet` | `boolean` | `false` | If `true`, suppresses all non-error success notifications (e.g., 'File created'). |
+
+#### Usage Examples
+
+**Create a file with content via `keybindings.json`:**
+```json
+{
+  "key": "ctrl+alt+s",
+  "command": "quickTempFile.api.create",
+  "args": {
+    "filename": "my-snippet.js",
+    "content": "console.log('My Snippet');"
+  }
+}
+```
+
+**A completely silent API call from another extension (TypeScript):**
+```typescript
+// Create a file instantly, with no dialogs and no success popups.
+// Errors will still be shown.
+await vscode.commands.executeCommand('quickTempFile.api.create', {
+  noDialog: true,
+  quiet: true,
+  content: 'This was created silently.'
+});
+```
