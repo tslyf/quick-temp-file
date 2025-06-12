@@ -238,6 +238,11 @@ export async function createFile(
     const configuration = vscode.workspace.getConfiguration('quickTempFile');
     const finalExtension = args.extension || configuration.get<string>('defaultExtension', '.txt');
 
+    let content = args.content;
+    if (args.contentFromClipboard) {
+        content = await vscode.env.clipboard.readText();
+    }
+
     let basePath: string;
 
     if (typeof args.directory === 'string') {
@@ -292,7 +297,7 @@ export async function createFile(
         }
         
         const filePath = path.join(finalPath, finalFilename);
-        return processAndOpenFile(filePath, args.content || '', context, createdThisSession, args.quiet || false);
+        return processAndOpenFile(filePath, content || '', context, createdThisSession, args.quiet || false);
     } else {
         return showQuickPickDialog(context, finalPath, finalExtension, createdThisSession, args.quiet || false);
     }

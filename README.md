@@ -45,6 +45,7 @@ The `args` object can contain the following fields:
 | `directory`| `string \| null` | `undefined`| Overrides the default directory. `null` uses the system temp folder. |
 | `extension`| `string` | `undefined` | Overrides the default file extension. |
 | `quiet` | `boolean` | `false` | If `true`, suppresses all non-error success notifications (e.g., 'File created'). |
+| `contentFromClipboard` |	`boolean` |	`false` |	If true, the file content will be read from the system clipboard. Overrides the `content` argument if both are provided. |
 
 #### Usage Examples
 

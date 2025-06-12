@@ -25,6 +25,11 @@ export interface CreateFileArgs {
      * If true, suppresses all non-error notifications.
      */
     quiet?: boolean;
+    /**
+     * If true, the file content will be read from the clipboard.
+     * This overrides the `content` argument if both are provided.
+     */
+    contentFromClipboard?: boolean;
 }
 
 /**
