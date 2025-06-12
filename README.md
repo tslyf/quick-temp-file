@@ -24,7 +24,10 @@ Visual Studio Code extension that allows you to quickly create or open temporary
 
 ## Extension Settings
 
-* **`quickTempFile.deleteOnExit`**: Deletes temporary files created during the current session when VS Code exits. (Default: `false`).
+* **`quickTempFile.cleanupStrategy`**: Defines when temporary files should be automatically deleted.
+  * `"never"` (Default): Never delete files.
+  * `"onEditorClose"`: Delete a file as soon as its editor tab is closed.
+  * `"onWindowClose"`: Delete all files created during the session when the VS Code window is closed.
 * **`quickTempFile.defaultPath`**: The default directory for creating temporary files. (Default: system's temporary directory).
 * **`quickTempFile.defaultExtension`**: The default file extension. (Default: `.txt`).
 
@@ -45,7 +48,7 @@ The `args` object can contain the following fields:
 | `directory`| `string \| null` | `undefined`| Overrides the default directory. `null` uses the system temp folder. |
 | `extension`| `string` | `undefined` | Overrides the default file extension. |
 | `quiet` | `boolean` | `false` | If `true`, suppresses all non-error success notifications (e.g., 'File created'). |
-| `contentFromClipboard` |	`boolean` |	`false` |	If true, the file content will be read from the system clipboard. Overrides the `content` argument if both are provided. |
+| `contentFromClipboard` |	`boolean` |	`false` |	If true, the file content will be read from the system clipboard. Overrides `content`. |
 
 #### Usage Examples
 

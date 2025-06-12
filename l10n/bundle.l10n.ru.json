@@ -27,5 +27,9 @@
     "Extension: {0}": "Расширение: {0}",
     "New random file with extension: {0}": "Новый случайный файл с расширением: {0}",
     "Waiting for {0} files to be unlinked...": "Ожидание удаления {0} файлов...",
-    "Cannot use a relative path ('{0}') when no folder is open.": "Невозможно использовать относительный путь ('{0}') при отсутствии открытой папки."
+    "Cannot use a relative path ('{0}') when no folder is open.": "Невозможно использовать относительный путь ('{0}') при отсутствии открытой папки.",
+    "Temporary file deleted on close: {0}": "Временный файл удален при закрытии: {0}",
+    "Failed to delete temporary file {0} on close: {1}": "Не удалось удалить временный файл {0} при закрытии: {1}",
+    "Cleanup on exit is disabled by current strategy ({0}).": "Очистка при выходе отключена текущей стратегией ({0}).",
+    "Session cleanup finished.": "Очистка сессии завершена."
 }

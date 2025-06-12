@@ -2,7 +2,7 @@
   "name": "quick-temp-file",
   "displayName": "%quickTempFile.displayName%",
   "description": "%quickTempFile.description%",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "publisher": "slyf",
   "icon": "./images/icon.png",
   "engines": {
@@ -45,11 +45,6 @@
     "configuration": {
       "title": "%quickTempFile.config.title%",
       "properties": {
-        "quickTempFile.deleteOnExit": {
-          "type": "boolean",
-          "default": false,
-          "description": "%quickTempFile.config.deleteOnExit.description%"
-        },
         "quickTempFile.defaultPath": {
           "type": "string",
           "default": "",
@@ -59,6 +54,21 @@
           "type": "string",
           "default": ".txt",
           "description": "%quickTempFile.config.defaultExtension.description%"
+        },
+        "quickTempFile.cleanupStrategy": {
+          "type": "string",
+          "enum": [
+              "never",
+              "onEditorClose",
+              "onWindowClose"
+          ],
+          "default": "never",
+          "description": "%quickTempFile.config.cleanupStrategy.description%",
+          "enumDescriptions": [
+              "%quickTempFile.config.cleanupStrategy.never.description%",
+              "%quickTempFile.config.cleanupStrategy.onEditorClose.description%",
+              "%quickTempFile.config.cleanupStrategy.onWindowClose.description%"
+          ]
         }
       }
     }

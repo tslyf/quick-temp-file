@@ -3,9 +3,12 @@
   "quickTempFile.command.createNoDialog.title": "Quick Temp File: Create Instant File",
   "quickTempFile.config.defaultExtension.description": "Default file extension (including the leading dot) to be appended if no extension is provided. Default is `.txt`.",
   "quickTempFile.config.defaultPath.description": "Default directory for temporary files. If empty, the system's temporary directory is used (e.g., `/tmp` or `%TEMP%`). Default is empty.",
-  "quickTempFile.config.deleteOnExit.description": "Delete temporary files created by this extension when VS Code exits. Default is `false`.",
   "quickTempFile.config.title": "Quick Temp File",
   "quickTempFile.description": "Quickly create temporary files.",
   "quickTempFile.displayName": "Quick Temp File",
-  "quickTempFile.command.apiCreate.title": "Quick Temp File: Create File"
+  "quickTempFile.command.apiCreate.title": "Quick Temp File: Create File",
+  "quickTempFile.config.cleanupStrategy.description": "Defines when temporary files created during the session should be automatically deleted.",
+  "quickTempFile.config.cleanupStrategy.never.description": "Never delete temporary files automatically.",
+  "quickTempFile.config.cleanupStrategy.onEditorClose.description": "Delete a temporary file as soon as its editor tab is closed.",
+  "quickTempFile.config.cleanupStrategy.onWindowClose.description": "Delete all temporary files from the session when the VS Code window is closed."
 }
