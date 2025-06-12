@@ -26,5 +26,6 @@
     "Delete on exit is disabled in settings.": "Удаление при выходе отключено в настройках.",
     "Extension: {0}": "Расширение: {0}",
     "New random file with extension: {0}": "Новый случайный файл с расширением: {0}",
-    "Waiting for {0} files to be unlinked...": "Ожидание удаления {0} файлов..."
+    "Waiting for {0} files to be unlinked...": "Ожидание удаления {0} файлов...",
+    "Cannot use a relative path ('{0}') when no folder is open.": "Невозможно использовать относительный путь ('{0}') при отсутствии открытой папки."
 }

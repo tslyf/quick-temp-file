@@ -26,5 +26,6 @@
   "Deleted temporary file on exit: {0}": "Deleted temporary file on exit: {0}",
   "Failed to delete temporary file {0} on exit: {1}": "Failed to delete temporary file {0} on exit: {1}",
   "Delete on exit is disabled in settings.": "Delete on exit is disabled in settings.",
-  "Waiting for {0} files to be unlinked...": "Waiting for {0} files to be unlinked..."
+  "Waiting for {0} files to be unlinked...": "Waiting for {0} files to be unlinked...",
+  "Cannot use a relative path ('{0}') when no folder is open.": "Cannot use a relative path ('{0}') when no folder is open."
 }

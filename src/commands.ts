@@ -237,20 +237,45 @@ export async function createFile(
 ): Promise<string | undefined> {
     const configuration = vscode.workspace.getConfiguration('quickTempFile');
     const finalExtension = args.extension || configuration.get<string>('defaultExtension', '.txt');
-    let finalPath: string;
+
+    let basePath: string;
 
     if (typeof args.directory === 'string') {
-        finalPath = args.directory;
+        basePath = args.directory;
     } else if (args.directory === null) {
-        finalPath = os.tmpdir();
+        basePath = os.tmpdir();
     } else {
-        finalPath = configuration.get<string>('defaultPath') || os.tmpdir();
+        basePath = configuration.get<string>('defaultPath') || os.tmpdir();
     }
+
+    let finalPath = basePath;
 
     if (finalPath.startsWith('~')) {
         finalPath = path.join(os.homedir(), finalPath.slice(1));
     }
-    
+
+    if (!path.isAbsolute(finalPath)) {
+        const activeEditor = vscode.window.activeTextEditor;
+        const workspaceFolders = vscode.workspace.workspaceFolders;
+        let resolutionRoot: string | undefined;
+
+        if (activeEditor) {
+            const fileWorkspaceFolder = vscode.workspace.getWorkspaceFolder(activeEditor.document.uri);
+            resolutionRoot = fileWorkspaceFolder ? fileWorkspaceFolder.uri.fsPath : path.dirname(activeEditor.document.uri.fsPath);
+        } else if (workspaceFolders && workspaceFolders.length > 0) {
+            resolutionRoot = workspaceFolders[0].uri.fsPath;
+        }
+
+        if (resolutionRoot) {
+            finalPath = path.join(resolutionRoot, finalPath);
+        } else {
+            vscode.window.showErrorMessage(
+                vscode.l10n.t("Cannot use a relative path ('{0}') when no folder is open.", basePath)
+            );
+            return undefined;
+        }
+    }
+
     try {
         await fs.mkdir(finalPath, { recursive: true });
     } catch (error: any) {
