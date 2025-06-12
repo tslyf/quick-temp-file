@@ -14,6 +14,7 @@ Visual Studio Code extension that allows you to quickly create or open temporary
 * **What it does:** Opens a dialog to create or select a file.
 
 *Demonstration:*
+
 ![Quick Temp File](images/demo.gif)
 
 ### 2. Create Instant File (No-Dialog Command)
